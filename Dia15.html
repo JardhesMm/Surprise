@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2 Anos: Nosso "Perfect Score" de Destino</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <style>
+        /* Nova Paleta de Cores (Inspirada em HIMYM/B99: Azul, Amarelo/Ouro, Branco) */
+        :root {
+            --fundo-principal: #F9FAFB; /* Branco Suave */
+            --fundo-secundario: #FFFFFF; /* Branco Puro */
+            --texto-escuro: #1F2937; /* Cinza Escuro */
+            --destaque-azul: #2563EB; /* Azul Vibrante (Jake/HIMYM) */
+            --destaque-dourado: #FBBF24; /* Amarelo/Ouro (Destino) */
+            --destaque-amor: #EF4444; /* Vermelho/Rosa (Amor/Coração) */
+            --sombra-card: 0 10px 30px rgba(37, 99, 235, 0.15);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--fundo-principal);
+            color: var(--texto-escuro);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1.5rem;
+            box-sizing: border-box;
+        }
+
+        .main-container {
+            display: grid;
+            gap: 1.5rem;
+            max-width: 1200px;
+            width: 100%;
+            grid-template-columns: 1fr;
+        }
+
+        /* Layout para Desktop (Conteúdo Principal maior no centro) */
+        @media (min-width: 1024px) {
+            .main-container {
+                grid-template-columns: 1fr 2fr 1fr; /* Lateral | Conteúdo Principal | Lateral */
+            }
+        }
+
+        .panel {
+            background-color: var(--fundo-secundario);
+            border-radius: 1.5rem;
+            padding: 2rem;
+            box-shadow: var(--sombra-card);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        /* Estilo específico para o painel principal */
+        .main-content {
+            padding: 2.5rem;
+            border: 3px solid var(--destaque-dourado); /* Borda Dourada */
+            background: linear-gradient(145deg, #ffffff, #f0f0f0);
+            box-shadow: 0 0 40px rgba(251, 191, 36, 0.5); /* Brilho Suave Dourado */
+            animation: bounce-in 1s ease-out;
+        }
+
+        .romantic-font {
+            font-family: 'Sacramento', cursive;
+            font-weight: 400; /* Padrão do Sacramento */
+        }
+
+        /* Animações e Estilos Divertidos */
+        @keyframes heart-beat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.15); }
+        }
+
+        .heart-icon {
+            animation: heart-beat 1.5s infinite ease-in-out;
+            text-shadow: 0 0 10px var(--destaque-amor);
+        }
+
+        @keyframes bounce-in {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        .photo-frame {
+            border: 5px solid var(--destaque-azul);
+            border-radius: 1rem;
+            overflow: hidden;
+            background-color: #E5E7EB; /* Cor para placeholder */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+
+        .photo-frame:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-container">
+
+        <!-- 
+    Arquivo atualizado para usar o formato "empilhado" (stacked) 
+    dentro de cada item da lista, conforme solicitado.
+-->
+        <div class="panel hidden lg:flex p-6">
+            <h3 class="text-2xl font-extrabold mb-6 text-destaque-azul text-center w-full">Regras de Jake & Amy</h3>
+            
+            <ul class="list-none p-0 text-left w-full max-w-sm text-gray-700 space-y-6">
+                
+                <!-- Regra 1: Título e Descrição empilhados -->
+                <li class="flex items-start">
+                    <span class="text-destaque-dourado mr-3 text-xl mt-1">⭐</span>
+                    <div class="flex flex-col">
+                        <span class="font-semibold text-gray-900 text-lg">Primeira Frase:</span>
+                        <span class="text-gray-700 italic text-base">“O amor te sustenta. É como mingau de aveia.”</span>
+                    </div>
+                </li>
+                
+                <!-- Regra 2: Título e Descrição empilhados -->
+                <li class="flex items-start">
+                    <span class="text-destaque-dourado mr-3 text-xl mt-1">⭐</span>
+                    <div class="flex flex-col">
+                        <span class="font-semibold text-gray-900 text-lg">Segunda Frase:</span>
+                        <span class="text-gray-700 italic text-base">“Qual é a largura de banda do Wi-Fi aqui? Temos muito conteúdo para transmitir.” </span> 
+                    </div>
+                </li>
+                
+                <!-- Regra 3: Título e Descrição empilhados -->
+                <li class="flex items-start">
+                    <span class="text-destaque-dourado mr-3 text-xl mt-1">⭐</span>
+                    <div class="flex flex-col">
+                        <span class="font-semibold text-gray-900 text-lg">Terceira Frase:</span>
+                        <span class="text-gray-700 italic text-base">“Esse é o título do nosso vídeo de...” </span> 
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+
+        <!-- Conteúdo Principal --><div class="main-content panel w-full lg:col-span-1">
+            <div class="text-center mb-8">
+                <span class="text-6xl md:text-7xl text-destaque-amor heart-icon" role="img" aria-label="Coração">
+                    &#10084;
+                </span>
+                <h1 class="text-4xl md:text-5xl font-black mt-4 text-texto-escuro">
+                    2 Anos: Nosso "Perfect Score" de Destino!s
+                </h1>
+            </div>
+
+            <!-- Espaço para Imagem -->
+            <a href="https://open.spotify.com/intl-pt/track/4d0DpU7Odiv0ztvX2GxJlk?si=27871d7a57d7496b" 
+            target="_blank" rel="noopener noreferrer" 
+            class="block group hover:opacity-90 transition-opacity duration-300">
+                <div class="photo-frame my-8 mx-auto max-w-sm w-full h-64 flex justify-center items-center">
+                    <img id="special-photo" 
+                        src="img/Screenshot_2025-03-18-11-14-39-923_com.miui.mediaviewer.jpg" 
+                        alt="Nosso Momento Especial" 
+                        onerror="this.src='https://placehold.co/400x300/2563EB/FFFFFF?text=ERRO:+Coloque+sua+URL+da+foto+aqui'"
+                        class="w-full h-full object-cover">
+                </div>
+                <p class="text-center text-sm text-gray-500 mt-[-0.5rem] mb-4 group-hover:text-destaque-azul transition-colors duration-200">
+                    🎵 Clique na foto para ouvir a nossa música! 🎵<br>(Minha foto favorita desse ano)
+                </p>
+            </a>
+            <!-- INSTRUÇÃO: Substitua o 'https://placehold.co...' pelo caminho da sua imagem real! -->
+
+            <h2 class="romantic-font text-5xl md:text-7xl text-destaque-dourado mb-6 text-center leading-tight">
+                "Our moment Lengen - wait for it - Dario."
+            </h2>
+
+            <div class="text-lg md:text-xl leading-relaxed text-center space-y-6 text-gray-700">
+                <p>
+                    Vinte e quatro meses… e parece que foi ontem que tudo começou. A gente riu, brigou, se perdeu e se encontrou — mil vezes — e, mesmo assim, eu ainda escolheria te encontrar de novo.
+                </p>
+                <p>
+                    Eu não acredito em destino, mas quando estou contigo, sinto que o universo fez um diagrama de fluxo com setas e legendas, tudo apontando para você. Você é o meu **"Perfect Score"**.
+                </p>
+                <p>
+                    “Eu nunca mais vou respirar, se você não me notar”, dizia Cazuza — e olha, é verdade. Porque por você, eu enfrento o tempo, o mundo e qualquer distância.
+                </p>
+                <p class="italic font-semibold text-destaque-azul mt-6">
+                    E se você não tivesse me mandado aquela mensagem… <br>ah, aquela mensagem…<br> Eu seria um bobo, meio tolo, caolho e ainda cheio de piolho.<br> Eu te vi chorando, andando, lutando, soluçando, rezando, e me ma…<br> Foram 12 meses intensos, vividos demais — e ainda vamos viver muito mais.
+                </p>
+                <p>
+                    É bom dividir a vida com alguém que compartilha o mesmo neurônio que eu. Doze meses viraram memórias, viraram história. E eu quero mais — mais 12, 24, 36…
+                </p>
+                <p class="text-2xl md:text-3xl font-bold pt-4 text-destaque-amor">
+                    <span class="romantic-font block text-6xl md:text-7xl">
+                        Eu te amo.
+                    </span>
+                    Quero o infinito com você, mesmo sabendo que infinito é exagero.
+                    Mas eu sempre fui exagerado — e por você, quero continuar sendo. 💙
+                </p>
+            </div>
+        </div>
+
+        <!-- Painel Lateral Direito (HIMYM/Mensagem Final) --><div class="panel hidden lg:flex">
+            <h3 class="text-2xl font-extrabold mb-4 text-destaque-azul">Primeira série que a gente viu junto!!!</h3>
+            <span class="text-6xl text-destaque-dourado mb-4" role="img" aria-label="Destino">
+                🗺️
+            </span>
+            <p class="text-lg italic text-gray-600 leading-relaxed mb-6">
+                "Se você ama alguma coisa, não pode deixá-la ir nem por um segundo, ou ela se vai para sempre."
+                <span class="block mt-2 font-bold text-gray-500">
+                    — Ted Mosby
+                </span>
+            </p>
+            <p class="text-xl font-bold text-destaque-amor">
+                Obrigado por ser a melhor história de todas.
+            </p>
+            <span class="mt-4 text-5xl text-destaque-amor heart-icon" role="img" aria-label="Aniversário">
+                🥂
+            </span>
+        </div>
+        
+    </div>
+
+</body>
+</html>

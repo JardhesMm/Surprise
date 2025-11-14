@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dia 5: Ma Meilleure Ennemie</title>
+    <!-- Carrega Tailwind CSS para estilização moderna e responsiva -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Define a fonte e cores personalizadas */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Fundo escuro: Azul Marinho Profundo */
+        .bg-dark-blue {
+            background-color: #001a33; 
+        }
+        /* Cor de destaque: Dourado/Amarelo suave */
+        .accent-yellow {
+            color: #FFD700; 
+        }
+        /* Cor principal do Cruzeiro (usada no destaque) */
+        .main-blue {
+            color: #002D62; 
+        }
+        .spotify-green {
+            color: #1DB954;
+            border-color: #1DB954;
+        }
+    </style>
+</head>
+<body class="bg-dark-blue min-h-screen flex justify-center items-center p-4">
+
+    <!-- CONTAINER MÃE: Layout de 3 colunas em telas grandes (lg:grid) -->
+    <div class="w-full max-w-7xl grid grid-cols-1 lg:grid-cols-[1fr_2fr_1fr] lg:gap-8 items-start pt-10 pb-10">
+        
+        <!-- SIDEBAR ESQUERDA: SPOTIFY -->
+        <div class="order-2 lg:order-1 p-4 lg:p-0 mb-6 lg:mb-0 w-full">
+            <!-- SUBSTITUA O LINK PELA URL EXATA DA MÚSICA NO SPOTIFY -->
+            <a href="https://open.spotify.com/intl-pt/track/4lriIG2vNqwDWzOj2I9rtj?si=4cff48f00a154875" target="_blank" class="block p-4 rounded-xl transition duration-300 hover:bg-gray-800 border-2 border-gray-700 hover:border-spotify-green text-center spotify-link">
+                <!-- Ícone do Spotify (SVG) -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 mx-auto spotify-green mb-2" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.174 17.51a.972.972 0 0 1-.774.298c-.286 0-.572-.116-.777-.323-2.185-2.227-5.71-2.203-7.925.048-.205.207-.492.323-.777.323-.286 0-.572-.116-.777-.323-.205-.207-.323-.492-.323-.777 0-.286.116-.572.323-.777 2.668-2.673 7.025-2.668 9.693 0 .207.205.323.492.323.777 0 .286-.116.572-.323.777zM12 8.527c-2.326 0-4.218 1.89-4.218 4.218 0 2.327 1.89 4.218 4.218 4.218 2.327 0 4.218-1.89 4.218-4.218 0-2.326-1.89-4.218-4.218-4.218zm.052 8.785c-2.133 0-3.874-1.741-3.874-3.874s1.741-3.874 3.874-3.874c2.133 0 3.874 1.741 3.874 3.874s-1.741 3.874-3.874 3.874z"/>
+                </svg>
+                <p class="text-gray-300 text-sm font-semibold mt-1">
+                    Ouvir o tema do dia
+                </p>
+                <p class="accent-yellow text-sm font-light">
+                    "Ma Meilleure Ennemie"
+                </p>
+            </a>
+        </div>
+
+        <!-- CONTEÚDO PRINCIPAL (CENTRO) -->
+        <div class="order-1 lg:order-2 w-full max-w-xl mx-auto">
+            
+            <div class="p-4 md:p-0 text-center">
+                <!-- Título e Tema -->
+                <h1 class="text-4xl font-extrabold text-white mb-2">
+                    Faltam 254 horas
+                </h1>
+                <h2 class="text-xl text-gray-300 mb-8 font-medium">
+                    💔 15 Janeiro - 14 Fevereiro — “Ma Meilleure Ennemie” (Tema da Dualidade)
+                </h2>
+
+                <!-- Espaço para a Imagem -->
+                <div class="w-full mb-10">
+                    <div id="image-placeholder" class="bg-gray-800 flex items-center justify-center rounded-xl overflow-hidden shadow-2xl p-6 h-6 md:h-96 border border-gray-700">
+                        <!-- Por favor, substitua este conteúdo com sua imagem -->
+                        <img src="img/IMG_20250111_191855.jpg" alt="Nossa foto de Dezembro" class="w-full h-full object-cover rounded-lg">
+                    </div>
+                </div>
+
+                <!-- Texto do Dia -->
+                <div class="text-left space-y-4 text-gray-200">
+                    <p class="italic border-l-4 border-yellow-500 pl-4 text-lg font-semibold text-white">
+                        É difícil verbalizar o que eu vou dizer, mas esse foi o melhor pior mês que eu já vivi. Este é, sem dúvidas, o mês em que eu mais tenho memórias, e foi o que mais me ensinou o que é amar de verdade.
+                    </p>
+                    
+                    <p>
+                        Eu te vi pela primeira vez passando por algo difícil, eu te vi chorar sem saber como seria o dia de amanhã. Eu te abracei sem sequer saber o que falar.
+                    </p>
+                    
+                    <p>
+                        Eu chorei enquanto escrevia isso. Mas antes que a lágrima caísse no chão, veio a citação: <span class="accent-yellow font-bold">“A pior das bênçãos / A mais bela das maldições.”</span>
+                    </p>
+                    
+                    <p>
+                        Antes que a lágrima caísse no chão, eu quis te chamar para dançar mais uma vez. Pode ser a primeira, pode ser a última, mas eu quero te puxar, te girar. Quero fechar o olho e quero, sem querer, no seu pé pisar. Quero colocar um sorriso no seu rosto, e do mesmo jeito que esse texto te deixou triste no início e você se esqueceu um pouco quando falei da dança, vou colocar memórias boas na sua cabeça, para você não ter que lembrar dos dias ruins.
+                    </p>
+                    
+                    <p>
+                        A gente cuidou de uma casa, a gente cuidou de cachorros esfomeados, a gente cuidou de contas que nem são nossas, mas acima de tudo, a gente cuidou um do outro.
+                    </p>
+                    
+                    <p>
+                        Quando falo que foi o melhor pior mês que vivi, não é porque eu tenho memórias ruins, mas sim porque foi o momento em que eu mais vi a pessoa que eu amo sofrer, e, ao mesmo tempo, foi o que eu mais a vi sorrir.
+                    </p>
+                    
+                    <p class="text-center pt-6 font-extrabold text-xl accent-yellow">
+                        Quando for nossa vez, a gente vai ser melhor ainda do que a gente foi nesses 30 dias. Mas melhor do que isso: quando for a nossa vez, vai ser a NOSSA VEZ... 💛
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SIDEBAR DIREITA: TEMA DO DIA (DUALIDADE DO AMOR) -->
+        <div class="order-3 lg:order-3 p-4 lg:p-0 mt-6 lg:mt-0 w-full">
+            <div class="p-4 rounded-xl border-2 border-gray-700 bg-gray-900 bg-opacity-50 text-center">
+                <!-- Ícone de Coração, representando o amor forte que superou a dualidade -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 mx-auto accent-yellow mb-2" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                </svg>
+                <p class="text-white text-base font-bold mb-1">
+                    A Dualidade do Amor
+                </p>
+                <!-- Citação principal que resume o dia -->
+                <p class="text-gray-400 text-xs italic">
+                    "A pior das bênçãos / A mais bela das maldições."
+                </p>
+            </div>
+        </div>
+        
+    </div>
+    
+</body>
+</html>

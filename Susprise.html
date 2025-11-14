@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Surpresa</title>
+  <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet" type="text/css">
+
+  <style>
+    /* ----- CSS ATUALIZADO ----- */
+
+    :root {
+      --azul-principal: #002D62;
+      --azul-hover: #0A4F9D;
+      --fundo-claro: #f0f4f8;
+      --texto-cinza: #55708D;
+      
+      /* Nova cor Celeste para a animação do coração */
+      --cor-celeste: #89CFF0; 
+      --cor-celeste-hover: #6495ED; /* Um pouco mais escuro para o hover */
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom, var(--fundo-claro), #d9e2ec);
+      font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 15px;
+      box-sizing: border-box;
+      overflow: hidden; 
+      position: relative; 
+    }
+
+    .container {
+      width: 90%;
+      max-width: 500px;
+      background: white;
+      padding: 25px;
+      border-radius: 20px;
+      box-shadow: 0 5px 20px rgba(0, 45, 98, 0.15);
+      text-align: center;
+      position: relative; 
+      z-index: 10; 
+    }
+
+    h2 {
+      margin-top: 0;
+      font-size: 28px;
+      color: var(--azul-principal);
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 16px;
+      color: var(--texto-cinza);
+      margin-bottom: 30px;
+    }
+
+    .dia-box {
+      margin: 10px 0;
+      padding: 15px;
+      border-radius: 12px;
+      background: var(--azul-principal);
+      color: white;
+      border: none;
+      display: block;
+      width: 100%;
+      box-sizing: border-box; 
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease; 
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .dia-box:not(.bloqueado)::before {
+      content: '💖 ';
+      font-size: 16px;
+      margin-right: 5px;
+    }
+
+    .dia-box:not(.bloqueado):hover {
+      background: var(--azul-hover); 
+      transform: scale(1.02); 
+      box-shadow: 0 4px 12px rgba(0, 45, 98, 0.2);
+    }
+
+    .bloqueado {
+      background: #f4f4f4; 
+      color: #aaa; 
+      border: 1px dashed #ccc; 
+      cursor: not-allowed;
+      opacity: 0.6; 
+      filter: blur(1.5px); 
+      pointer-events: none;
+    }
+
+    .dia-box.bloqueado::before {
+      content: '🔒 ';
+      font-size: 16px;
+      margin-right: 5px;
+    }
+
+    .dia-box.bloqueado:hover {
+      transform: none;
+      box-shadow: none;
+      background: #f4f4f4;
+    }
+
+    /* --- CSS DA NOVA ANIMAÇÃO "I LOVE YOU" --- */
+    
+    /* Animação 'throb' (pulsar) */
+    @-webkit-keyframes throb{
+      0%{ -webkit-transform: scale(1); }
+      35%{ -webkit-transform: scale(1.2); }
+      85%{ -webkit-transform: scale(1); }		
+    }
+    @keyframes throb{
+      0%{ transform: scale(1); }
+      35%{ transform: scale(1.2); }
+      85%{ transform: scale(1); }		
+    }
+
+    /* O container da animação. Renomeei para '.wrapper-heart' para evitar conflitos */
+    .wrapper-heart {
+      width: 90vmin;
+      height: 90vmin;
+      position: absolute; /* Mudei para absolute */
+      top: 10px; /* Posição no canto */
+      left: 10px; /* Posição no canto */
+      transform: scale(0.25); /* Diminui o tamanho para 25% */
+      transform-origin: top left; /* Define o ponto de origem da escala */
+      z-index: 20; /* Garante que fique acima de outros elementos de fundo */
+    }
+
+    /* Adiciona a animação quando a classe 'throb' está presente */
+    div.throb {
+      -webkit-animation: throb 0.5s infinite;
+      animation: throb 0.5s infinite;
+      animation-delay: 0.8s;
+    }
+    
+    /* Esconde os checkboxes reais */
+    .wrapper-heart input[type="checkbox"] {
+      display: none;
+    }
+
+    /* Estilo dos 'labels' (I, love, you) */
+    .wrapper-heart input[type="checkbox"] + label {
+      width: 30vmin; height: 30vmin;
+      line-height: 30vmin;
+      display: inline-block;
+      position: absolute;
+      font-family: 'Shadows Into Light', cursive; /* Usa a fonte importada */
+      font-size: 30vmin;
+      text-align: center;
+      transition: all 1s ease;
+      color: #111; /* Cor do texto original */
+    }
+
+    .wrapper-heart label {
+      text-shadow: 3vmin 3vmin 10vmin rgba(0,0,0,0.5);
+    }
+    
+    /* Efeito hover com a cor celeste */
+    .wrapper-heart label:hover {
+      color: var(--cor-celeste-hover); /* Cor celeste escura no hover */
+      cursor: pointer;
+    }
+
+    #ck1 + label,
+    #ck2 + label {
+      border-radius: 50%;
+      top: 0;
+    }
+
+    /* Quando checado, muda para a cor celeste e esconde o texto */
+    #ck1:checked + label,
+    #ck2:checked + label,
+    #ck3:checked + label {
+      background: var(--cor-celeste); /* COR CELESTE APLICADA AQUI */
+      font-size: 0;
+      transition: all 1s ease;
+    }
+
+    #ck1 + label {
+      left: 0;
+    }
+
+    #ck2 + label {
+      right: 10vmin;
+    }
+
+    #ck1:checked + label,
+    #ck2:checked + label {
+      width: 54vmin; height: 54vmin;
+      border-radius: 50%;
+      line-height: 54vmin;
+    }
+
+    #ck2:checked + label {
+      right: 0;
+    }
+
+    #ck3 + label {
+      bottom: 5vmin; left: 50%;
+      margin: 0 -9vmin;
+      background-color: white;
+    }
+
+    #ck3:checked + label {
+      width: 49.5vmin; height: 49.5vmin;
+      bottom: 17.28vmin; left: 29.16vmin;
+      transform: rotate(45deg);
+      line-height: 4.86vmin;
+    }
+
+    .wrapper-heart span {
+      display: inline-block;
+      text-align: left;
+      position: absolute;
+      bottom: 0vmin; left: 0vmin;
+      margin-bottom: -3vmin;
+      font-family: 'Shadows Into Light', cursive; 
+      font-size: 6vmin;
+      color: #999;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <h2>✨ Nossa Contagem Especial ✨</h2>
+    <p>Conteúdo liberado apenas até a data de hoje.</p>
+    <div id="conteudo"></div>
+  </div>
+
+  <form>
+    <div class="wrapper-heart"> <input type="checkbox" id="ck1" onClick="check()"/>
+      <label for="ck1">I</label>
+      <input type="checkbox" id="ck2" onClick="check()"/>
+      <label for="ck2">love</label>
+      <input type="checkbox" id="ck3" onClick="check()"/>
+      <label for="ck3">you</label>
+      <span>(Click on words)</span>
+    </div>
+  </form>
+
+  <script>
+    const inicioMes = 12;
+    const inicioDia = 3;
+
+    const dias = [
+      { dia: 3, rota: "dia3.html" },
+      { dia: 4, rota: "dia4.html" },
+      { dia: 5, rota: "dia5.html" },
+      { dia: 6, rota: "dia6.html" },
+      { dia: 7, rota: "dia7.html" },
+      { dia: 8, rota: "dia8.html" },
+      { dia: 9, rota: "dia9.html" },
+      { dia: 10, rota: "dia10.html" },
+      { dia: 11, rota: "dia11.html" },
+      { dia: 12, rota: "dia12.html" },
+      { dia: 13, rota: "dia13.html" },
+      { dia: 14, rota: "dia14.html" },
+      { dia: 15, rota: "dia15.html" },
+    ];
+
+    const hoje = new Date();
+    const diaAtual = hoje.getDate();
+    const mesAtual = hoje.getMonth() + 1; 
+
+    const conteudoDiv = document.getElementById("conteudo");
+
+    dias.forEach(item => {
+      const btn = document.createElement("button");
+      btn.classList.add("dia-box");
+
+      let liberado = (mesAtual === inicioMes && item.dia <= diaAtual);
+
+      if (!liberado) {
+        btn.classList.add("bloqueado");
+        btn.innerHTML = `Dia ${item.dia} — bloqueado`;
+      } else {
+        btn.innerHTML = `Dia ${item.dia} — abrir`;
+        btn.onclick = () => window.location.href = item.rota;
+      }
+
+      conteudoDiv.appendChild(btn);
+    });
+    
+    function check() {
+      const ck1 = document.getElementById('ck1');
+      const ck2 = document.getElementById('ck2');
+      const ck3 = document.getElementById('ck3');
+      const wrapper = document.querySelector('.wrapper-heart');
+
+      if (!ck1 || !ck2 || !ck3 || !wrapper) {
+        console.error("Elementos da animação do coração não foram encontrados.");
+        return;
+      }
+
+      if (ck1.checked && ck2.checked && ck3.checked) {
+        wrapper.classList.add('throb');
+      } else {
+        wrapper.classList.remove('throb');
+      }
+    }
+  </script>
+
+</body>
+</html>

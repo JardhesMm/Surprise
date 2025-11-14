@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dia 8: Não Me Sinto Mal Mais</title>
+    <!-- Carrega Tailwind CSS para estilização moderna e responsiva -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Define a fonte e cores personalizadas */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Fundo escuro: Azul Profundo (referência Cruzeiro/Sidoka) */
+        .bg-dark-blue-cruzeiro {
+            background-color: #001D44; 
+        }
+        /* Cor de destaque: Prata/Cinza Claro (Silver) */
+        .accent-silver {
+            color: #C0C0C0; 
+        }
+        /* Cor secundária: Azul Claro/Brilhante (Cor principal do Cruzeiro) */
+        .accent-cruzeiro-blue {
+            color: #4A90E2; 
+        }
+        .spotify-green {
+            color: #1DB954;
+            border-color: #1DB954;
+        }
+    </style>
+</head>
+<body class="bg-dark-blue-cruzeiro min-h-screen flex justify-center items-center p-4">
+
+    <!-- CONTAINER MÃE: Layout de 3 colunas em telas grandes (lg:grid) -->
+    <div class="w-full max-w-7xl grid grid-cols-1 lg:grid-cols-[1fr_2fr_1fr] lg:gap-8 items-start pt-10 pb-10">
+        
+        <!-- SIDEBAR ESQUERDA: SPOTIFY -->
+        <div class="order-2 lg:order-1 p-4 lg:p-0 mb-6 lg:mb-0 w-full">
+            <!-- Link direto para a música "Não Me Sinto Mal Mais" -->
+            <!-- Link placeholder, substitua pela URL exata no Spotify -->
+            <a href="https://open.spotify.com/intl-pt/track/2YJtRdd9duQ0bEDMKZ79Hw?si=e795f3ab22cc45db" target="_blank" class="block p-4 rounded-xl transition duration-300 hover:bg-gray-800 border-2 border-gray-700 hover:border-spotify-green text-center spotify-link">
+                <!-- Ícone do Spotify (SVG) -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 mx-auto spotify-green mb-2" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.174 17.51a.972.972 0 0 1-.774.298c-.286 0-.572-.116-.777-.323-2.185-2.227-5.71-2.203-7.925.048-.205.207-.492.323-.777.323-.286 0-.572-.116-.777-.323-.205-.207-.323-.492-.323-.777 0-.286.116-.572.323-.777 2.668-2.673 7.025-2.668 9.693 0 .207.205.323.492.323.777 0 .286-.116.572-.323.777zM12 8.527c-2.326 0-4.218 1.89-4.218 4.218 0 2.327 1.89 4.218 4.218 4.218 2.327 0 4.218-1.89 4.218-4.218 0-2.326-1.89-4.218-4.218-4.218zm.052 8.785c-2.133 0-3.874-1.741-3.874-3.874s1.741-3.874 3.874-3.874c2.133 0 3.874 1.741 3.874 3.874s-1.741 3.874-3.874 3.874z"/>
+                </svg>
+                <p class="text-gray-300 text-sm font-semibold mt-1">
+                    Ouvir o tema do dia
+                </p>
+                <p class="accent-silver text-sm font-light">
+                    "Não Me Sinto Mal Mais"
+                </p>
+            </a>
+        </div>
+
+        <!-- CONTEÚDO PRINCIPAL (CENTRO) -->
+        <div class="order-1 lg:order-2 w-full max-w-xl mx-auto">
+            
+            <div class="p-4 md:p-0 text-center">
+                <!-- Título e Tema -->
+                <h1 class="text-4xl font-extrabold text-white mb-2">
+                    faltam 168 horas
+                </h1>
+                <h2 class="text-xl text-gray-300 mb-8 font-medium">
+                    💙 15 Maio - 14 Junho — “Não Me Sinto Mal Mais” (Sidoka)
+                </h2>
+
+                <!-- Espaço para a Imagem -->
+                <div class="w-full mb-10">
+                    <div id="image-placeholder" class="bg-gray-800 flex items-center justify-center rounded-xl overflow-hidden shadow-2xl p-6 h-64 md:h-96 border border-gray-700">
+                        <!-- Por favor, substitua este conteúdo com sua imagem -->
+                         <img src="img/IMG-20250512-WA0049.jpg" alt="Nossa foto de Dezembro" class="w-full h-full object-cover rounded-lg">
+                    </div>
+                </div>
+
+                <!-- Texto do Dia -->
+                <div class="text-left space-y-4 text-gray-200">
+                    <p class="italic border-l-4 border-accent-cruzeiro-blue pl-4 text-lg font-semibold text-white">
+                        Foi o mês do meu aniversário, mas quem me deu o maior presente foi você — só por estar lá.
+                    </p>
+                    
+                    <p>
+                        Camisa do Cruzeiro, risadas, abraços… tudo simples, mas cheio de significado.
+                    </p>
+                    
+                    <p>
+                        <span class="accent-silver font-bold">“Hoje eu não me sinto mal mais”</span> — e é exatamente isso. Desde que você entrou na minha vida, a leveza voltou.
+                    </p>
+                    
+                    <p>
+                        As preocupações pesam menos, o riso vem fácil, e a dor parece não ter coragem de ficar.
+                    </p>
+                    
+                    <!-- Frase de Finalização (Retomada e destaque) -->
+                    <p class="text-center pt-6 font-extrabold text-xl accent-cruzeiro-blue">
+                        "Antes de você, minha vida era igual a sala de troféus do Atlético-MG, sempre vazia." 💫
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SIDEBAR DIREITA: TEMA DO DIA (ANIVERSÁRIO E LEVEZA) -->
+        <div class="order-3 lg:order-3 p-4 lg:p-0 mt-6 lg:mt-0 w-full">
+            <div class="p-4 rounded-xl border-2 border-gray-700 bg-gray-900 bg-opacity-50 text-center">
+                <!-- Ícone de Estrela/Presente (SVG) -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 mx-auto accent-silver mb-2" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2l3.09 6.3 6.91.95-5 4.88 1.18 6.88L12 18l-6.18 3.24 1.18-6.88-5-4.88 6.91-.95L12 2z"/>
+                </svg>
+                <p class="text-white text-base font-bold mb-1">
+                    Leveza e O Melhor Presente
+                </p>
+                <!-- Citação principal que resume o dia -->
+                <p class="text-gray-400 text-xs italic">
+                    "Desde que você entrou na minha vida, a leveza voltou."
+                </p>
+            </div>
+        </div>
+        
+    </div>
+    
+</body>
+</html>
